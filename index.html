@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ludo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Play LUDO</h1>
+        <div class="top">
+          
+       <div class="dice">
+           <p>Player 1</p>
+           <img src="image/dice1.png" alt="dice1" id="check1">
+       </div>
+       <div class="dice">
+        <p>Player 2</p>
+        <img src="image/dice6.png" alt="dice6" id="check2">
+    </div>
+        </div>
+    <div>
+        <button onclick="ludogame()"> Click Me </button>
+    </div>
+    </div>
+
+    <script>
+         ludogame = () => {
+        const play1= Math.floor(Math.random() * 6) + 1;
+        const play1dice = `image/dice${play1}.png`;
+        document.getElementById('check1').setAttribute('src',play1dice);
+
+        const play2= Math.floor(Math.random() * 6) + 1;
+        const play2dice = `image/dice${play2}.png`;
+        document.getElementById('check2').setAttribute('src',play2dice);
+        if (play1 > play2) { document.querySelector('h1').innerHTML="Player1 Won :) "}
+        else if (play1 < play2) { document.querySelector('h1').innerHTML="Player2 Won :) " }
+        else {document.querySelector('h1').innerHTML="Draw"}
+        }   
+    </script>
+</body>
+</html>
